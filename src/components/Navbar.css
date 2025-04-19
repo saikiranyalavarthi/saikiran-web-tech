@@ -1,0 +1,12 @@
+.navlink:hover {
+  color: white !important;
+  transition: 0.3s ease-in-out;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.navlink:hover {
+  background-color: #fd7e14 !important; /* Bootstrap orange */
+  color: white !important;
+  transform: scale(1.05);
+}
