@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="bg-black text-center text-white d-flex flex-column justify-content-center align-items-center vh-100 px-3">
       <img
         src={logo}
-        alt="Al-Ehsan Logo"
+        alt="saikiran-web-Tech Logo"
         className="mb-4"
         style={{
           maxWidth: "400px",

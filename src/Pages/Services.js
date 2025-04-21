@@ -4,32 +4,32 @@ const services = [
   {
     icon: "bi-camera-fill",
     title: "Portraits & Landscapes",
-    desc: "Professional photography services for portraits, landscapes, and commercial needs.",
+    desc: "Capture your best moments with our professional photography services. Whether it's stunning outdoor landscapes or elegant indoor portraits, we deliver high-quality visuals that leave a lasting impression.",
   },
   {
     icon: "bi-camera-video-fill",
     title: "Logo Design & Animation",
-    desc: "Creative logo designs and engaging animations to make your brand stand out.",
+    desc: "Stand out in the market with creative logo designs and eye-catching animations. From concept to execution, we bring your brand’s personality to life through motion graphics and iconic visuals.",
   },
   {
     icon: "bi-hdd-stack-fill",
     title: "IT Hardware Services",
-    desc: "Professional installation and repair services for all your IT hardware needs.",
+    desc: "Reliable installation, maintenance, and repair of all major IT hardware components. Whether it’s setting up networks, troubleshooting PCs, or upgrading systems—we’ve got your tech covered.",
   },
   {
     icon: "bi-geo-alt-fill",
     title: "Google Maps Services",
-    desc: "Business location setup, 360° photos, and optimization for Google Maps.",
+    desc: "Enhance your business visibility with our Google Maps services. We offer location setup, business verification, 360° virtual tours, and map optimization to help customers find you faster.",
   },
   {
     icon: "bi-code-slash",
     title: "Web & App Development",
-    desc: "Custom websites and mobile applications tailored to your business requirements.",
+    desc: "Get custom-built websites and mobile apps that are fast, secure, and tailored to your needs. From e-commerce platforms to business portals, we deliver scalable digital solutions for all industries.",
   },
   {
     icon: "bi-graph-up-arrow",
     title: "Digital Marketing",
-    desc: "Comprehensive digital marketing solutions to grow your online presence.",
+    desc: "Boost your online presence with our full-suite digital marketing strategies. We offer SEO, social media marketing, paid ads, and content creation to help you reach the right audience effectively.",
   },
 ];
 
@@ -69,9 +69,6 @@ const Services = () => {
                 </div>
                 <h5 className="fw-bold text-white">{service.title}</h5>
                 <p className="text-light">{service.desc}</p>
-                <button className="btn btn-outline-warning btn-sm rounded-pill">
-                  Learn More
-                </button>
               </div>
             </div>
           ))}

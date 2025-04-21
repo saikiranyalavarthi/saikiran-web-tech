@@ -35,19 +35,19 @@ function Works() {
               </p>
               <ul className="list-unstyled">
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Responsive Web Design
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   User-Centric Layouts
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Custom UI/UX Design
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Branding and Graphic Design
                 </li>
               </ul>
@@ -70,19 +70,19 @@ function Works() {
               </p>
               <ul className="list-unstyled">
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Native & Cross-Platform Apps (React Native, Flutter)
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Custom Mobile App Development
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Backend Integration & API Services
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   App Store Deployment & Support
                 </li>
               </ul>
@@ -104,19 +104,19 @@ function Works() {
               </p>
               <ul className="list-unstyled">
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   On-Page & Off-Page SEO Optimization
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Keyword Research & Content Strategy
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Google Ads & Pay-Per-Click (PPC) Campaigns
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Social Media Management (Facebook, Instagram, LinkedIn)
                 </li>
               </ul>
@@ -138,19 +138,19 @@ function Works() {
               </p>
               <ul className="list-unstyled">
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Frontend Development (React, Angular, Vue.js)
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Backend Development (Node.js, PHP, Django)
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Custom Web Applications
                 </li>
                 <li>
-                  <i className="bi bi-check-circle-fill text-success me-2"></i>
+                  <i className="bi bi-check-circle-fill text-warning me-2"></i>
                   Content Management Systems (WordPress, Drupal)
                 </li>
               </ul>

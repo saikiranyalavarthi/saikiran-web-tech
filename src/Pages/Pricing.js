@@ -20,11 +20,11 @@ const pricingPlans = [
     price: "₹25,000",
     billing: "One-time payment",
     features: [
-      "Business Profile Setup",
-      "360 Photos",
-      "Basic Website",
-      "QR-Code for reviews",
-      "GPS Accuracy",
+      "Custom App Design",
+      "Push Notifications",
+      "Online Appointment/Booking System",
+      "In-app Chat Support",
+      "Social Media Integration",
     ],
     color: "success",
   },
@@ -87,7 +87,15 @@ const Pricing = () => {
                   ))}
                 </ul>
                 <button className={`btn btn-${plan.color} w-100`}>
-                  Get Started
+                  <a
+                    href="https://wa.me/9390627367" // replace with your WhatsApp number
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`btn btn-${plan.color} w-100 d-flex align-items-center justify-content-center gap-2`}
+                  >
+                    <i className="bi bi-whatsapp"></i>
+                    Get Started
+                  </a>
                 </button>
               </div>
             </div>

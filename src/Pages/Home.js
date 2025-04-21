@@ -4,7 +4,7 @@ import About from "./About";
 import Services from "./Services";
 import Works from "./Works";
 import Achievements from "./Achievements";
-import Team from "./Team";
+// import Team from "./Team";
 import Pricing from "./Pricing";
 import FAQ from "./FAQ";
 import Contact from "./Contact";
@@ -17,7 +17,7 @@ const Home = () => {
       <Services />
       <Works />
       <Achievements />
-      <Team />
+      {/* <Team /> */}
       <Pricing />
       <FAQ />
       <Contact />

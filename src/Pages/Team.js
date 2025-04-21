@@ -30,7 +30,7 @@ function Team() {
       <div className="container">
         <h2 className="text-center text-warning mb-3">Meet Our Team</h2>
         <p className="text-center mb-5">
-          The creative minds behind <strong>Al-Ehsan Media & Tech</strong>
+          The creative minds behind <strong>Saikiran web & Tech</strong>
         </p>
         <div className="row g-4">
           {teamMembers.map((member, index) => (
