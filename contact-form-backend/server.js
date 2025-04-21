@@ -1,4 +1,3 @@
-// server.js
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -6,9 +5,10 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-// Middleware
+// Middleware for CORS and parsing requests
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB (use your MongoDB URI here)
 mongoose
@@ -33,6 +33,11 @@ const Contact = mongoose.model("Contact", contactSchema);
 app.post("/api/contact", async (req, res) => {
   const { name, email, subject, message } = req.body;
 
+  // Simple validation to ensure fields are not empty
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ message: "All fields are required!" });
+  }
+
   try {
     const newContact = new Contact({
       name,
@@ -42,10 +47,12 @@ app.post("/api/contact", async (req, res) => {
     });
 
     await newContact.save();
-    res.status(201).json({ message: "Message sent successfully!" });
+    res.status(200).json({ message: "Message sent successfully!" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Failed to send message!" });
+    res
+      .status(500)
+      .json({ message: "Failed to send message. Please try again later." });
   }
 });
 

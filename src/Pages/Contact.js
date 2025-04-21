@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Contact.css"; // Assuming you have a CSS file for custom styles
 
 const Contact = () => {
-  // State to store form data and response message
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,6 +11,7 @@ const Contact = () => {
     message: "",
   });
   const [responseMessage, setResponseMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Handle form input change
   const handleInputChange = (e) => {
@@ -25,13 +25,14 @@ const Contact = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true); // Disable the button while submitting
 
     try {
       const response = await axios.post(
         "http://localhost:5000/api/contact",
         formData
       );
-      setResponseMessage(response.data.message); // Success message from backend
+      setResponseMessage(response.data.message);
       setFormData({
         name: "",
         email: "",
@@ -39,8 +40,10 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
-      console.error("There was an error sending the message!", error);
+      console.error("Error sending the message!", error);
       setResponseMessage("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false); // Re-enable the button
     }
   };
 
@@ -52,13 +55,11 @@ const Contact = () => {
           Get in touch with our team for any inquiries
         </p>
 
-        {/* Response message */}
         {responseMessage && (
           <div className="alert alert-info text-center">{responseMessage}</div>
         )}
 
         <div className="row g-5">
-          {/* Contact Info */}
           <div className="col-md-5">
             <h4 className="mb-3">Contact Information</h4>
             <p>
@@ -111,7 +112,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="col-md-7">
             <h4 className="mb-3">Send Us a Message</h4>
             <form onSubmit={handleSubmit}>
@@ -127,6 +127,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter your name"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -141,6 +142,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -155,6 +157,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder="Enter subject"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -169,10 +172,15 @@ const Contact = () => {
                   onChange={handleInputChange}
                   rows="5"
                   placeholder="Type your message"
+                  required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-warning">
-                Send Message
+              <button
+                type="submit"
+                className="btn btn-warning"
+                disabled={isSubmitting} // Disable the button while submitting
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
