@@ -9,6 +9,7 @@ import Pricing from "./Pages/Pricing";
 import FAQ from "./Pages/FAQ";
 import Contact from "./Pages/Contact";
 import "./App.css"; // Import your CSS file
+import Footer from "./Pages/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

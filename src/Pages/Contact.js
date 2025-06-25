@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
-import axios from "axios";
-import "./Contact.css"; // Assuming you have a CSS file for custom styles
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
+import "./Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,10 +15,8 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-  const [responseMessage, setResponseMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Handle form input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -22,29 +25,30 @@ const Contact = () => {
     });
   };
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Disable the button while submitting
+    setIsSubmitting(true);
 
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/contact",
-        formData
-      );
-      setResponseMessage(response.data.message);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error("Error sending the message!", error);
-      setResponseMessage("Failed to send message. Please try again later.");
-    } finally {
-      setIsSubmitting(false); // Re-enable the button
-    }
+    const { name, email, subject, message } = formData;
+
+    const whatsappMessage = `Hello, I'm ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
+    const phoneNumber = "919390627367"; // Your WhatsApp number without + or spaces
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+    // Optionally reset the form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -52,31 +56,35 @@ const Contact = () => {
       <div className="container">
         <h2 className="text-center text-warning mb-4">Contact Us</h2>
         <p className="text-center mb-5">
-          Get in touch with our team for any inquiries
+          Get in touch with our team on WhatsApp
         </p>
-
-        {responseMessage && (
-          <div className="alert alert-info text-center">{responseMessage}</div>
-        )}
 
         <div className="row g-5">
           <div className="col-md-5">
             <h4 className="mb-3">Contact Information</h4>
             <p>
-              <i className="bi bi-geo-alt-fill text-warning me-2"></i>{" "}
+              <i className="bi bi-geo-alt-fill text-warning me-2"></i>
               Hyderabad, Telangana, India
             </p>
             <p>
-              <i className="bi bi-telephone-fill text-warning me-2"></i> +91
-              9390627367
+              <i className="bi bi-telephone-fill text-warning me-2"></i>
+              +91 9390627367
             </p>
             <p>
-              <i className="bi bi-envelope-fill text-warning me-2"></i>{" "}
+              <i className="bi bi-envelope-fill text-warning me-2"></i>
               yalavarthisaikiran3482@gmail.com
             </p>
 
             <h5 className="mt-4">Follow Us</h5>
             <div className="d-flex gap-3 mt-2">
+              <a
+                href="https://wa.me/919390627367"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white fs-4"
+              >
+                <FaWhatsapp />
+              </a>
               <a
                 href="https://facebook.com"
                 target="_blank"
@@ -113,7 +121,7 @@ const Contact = () => {
           </div>
 
           <div className="col-md-7">
-            <h4 className="mb-3">Send Us a Message</h4>
+            <h4 className="mb-3">Send Us a Message on WhatsApp</h4>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
@@ -177,10 +185,10 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="btn btn-warning"
-                disabled={isSubmitting} // Disable the button while submitting
+                className="btn btn-success"
+                disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Redirecting..." : "Send via WhatsApp"}
               </button>
             </form>
           </div>

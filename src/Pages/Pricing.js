@@ -3,7 +3,7 @@ import React from "react";
 const pricingPlans = [
   {
     title: "Website",
-    price: "₹10,000",
+    price: "₹15,000",
     billing: "One-time payment",
     features: [
       "Expert Developer",
@@ -17,7 +17,7 @@ const pricingPlans = [
   },
   {
     title: "Mobile Apps",
-    price: "₹25,000",
+    price: "₹30,000",
     billing: "One-time payment",
     features: [
       "Custom App Design",
@@ -30,7 +30,7 @@ const pricingPlans = [
   },
   {
     title: "Digital Marketing",
-    price: "₹12,000",
+    price: "₹20,000",
     billing: "Per month",
     features: [
       "Google Ads Setup",
